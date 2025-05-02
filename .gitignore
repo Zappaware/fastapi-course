@@ -1,0 +1,5 @@
+# Ignore .idea folder in the root directory
+/.idea/
+
+# Ignore .idea folder in all subdirectories
+**/.idea/
