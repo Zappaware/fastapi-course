@@ -6,3 +6,6 @@
 
 # Ignore all .idea folders globally
 .idea/
+
+# Ignore all __pycache__ folders
+__pycache__/
