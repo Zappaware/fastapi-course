@@ -3,3 +3,6 @@
 
 # Ignore .idea folder in all subdirectories
 **/.idea/
+
+# Ignore all .idea folders globally
+.idea/
