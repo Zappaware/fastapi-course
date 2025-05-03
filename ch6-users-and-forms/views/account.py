@@ -9,16 +9,31 @@ from viewmodels.account.register_viewmodel import RegisterViewModel
 router = fastapi.APIRouter()
 
 @router.get("/account")
+@template()
 def index(request: Request):
     vm = AccountViewModel(request)
     return vm.to_dict()
 
 @router.get("/account/register")
+@template()
 def register(request: Request):
+    print("GET REGISTER")
     vm = RegisterViewModel(request)
+    if vm.error:
+        return vm.to_dict()
+    print("TODO: Redirect to here")
+    return vm.to_dict()
+
+@router.post("/account/register")
+@template()
+async def register(request: Request):
+    print("POST REGISTER")
+    vm = RegisterViewModel(request)
+    await vm.load()
     return vm.to_dict()
 
 @router.get("/account/login")
+@template()
 def login(request: Request):
     vm = LoginViewModel(request)
     return vm.to_dict()
