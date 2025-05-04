@@ -18,9 +18,9 @@ class RegisterViewModel(ViewModelBase):
         self.email = form.get("email")
         self.password = form.get("password")
         
-        if not self.name or self.name.strip():
+        if not self.name or not self.name.strip():
             self.error = "Name is required"
-        elif not self.email or self.email.strip():
+        elif not self.email or not self.email.strip():
             self.error = "Email is required"
         elif not self.password or len(self.password) < 8:
             self.error = "Must have a password and be at least 8 characters long"
